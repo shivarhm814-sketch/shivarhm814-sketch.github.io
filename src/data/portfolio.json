@@ -1,0 +1,80 @@
+[
+  {
+    "id": "project-6",
+    "title": "تصویرسازی محصول با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "بازطراحی عکس محصول برای کاتالوگ فروش با پس‌زمینه‌ی حرفه‌ای",
+    "imageBefore": "/images/project-6-before.jpg",
+    "imageAfter": "/images/project-6-after.jpg",
+    "tags": ["هوش مصنوعی", "محصول", "تجاری"]
+  },
+  {
+    "id": "project-1",
+    "title": "تصویرسازی محصول با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "بازسازی و بهبود عکس محصول با هوش مصنوعی برای نمایش حرفه‌ای‌تر",
+    "imageBefore": "/images/project-1-before.jpg",
+    "imageAfter": "/images/project-1-after.jpg",
+    "tags": ["هوش مصنوعی", "محصول", "تجاری"]
+  },
+  {
+    "id": "project-3",
+    "title": "پرتره هنری با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "تبدیل عکس پرتره معمولی به اثر هنری با سبک نقاشی روغن",
+    "imageBefore": "/images/project-3-before.jpg",
+    "imageAfter": "/images/project-3-after.jpg",
+    "tags": ["هوش مصنوعی", "پرتره", "هنر دیجیتال"]
+  },
+  {
+    "id": "project-4",
+    "title": "وب‌سایت مشاور املاک",
+    "category": "web-design",
+    "description": "طراحی وب‌سایت اختصاصی مشاور املاک با جستجوی هوشمند و نمایش آگهی‌ها",
+    "image": "/images/project-4.jpg",
+    "tags": ["املاک", "UI/UX", "طراحی وب"]
+  },
+  {
+    "id": "project-5",
+    "title": "پلتفرم همسایه سرویس",
+    "category": ["web-design", "app-design"],
+    "description": "طراحی وب‌سایت و اپلیکیشن موبایل ارتباط ساکنین محله برای درخواست و ارائه‌ی خدمات محلی",
+    "image": "/images/project-5.jpg",
+    "tags": ["وب و موبایل", "خدمات محلی", "اجتماعی"]
+  },
+  {
+    "id": "project-2",
+    "title": "اپ آشپزیار",
+    "category": "app-design",
+    "description": "طراحی اپلیکیشن موبایل برای پیشنهاد دستور پخت بر اساس مواد غذایی موجود در خانه، با تمرکز بر کاهش هزینه و دورریز",
+    "image": "/images/project-2.jpg",
+    "tags": ["موبایل", "اپ", "بهره‌وری"]
+  },
+  {
+    "id": "project-7",
+    "title": "نمونه تبدیل عکس با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "توضیح این نمونه را بعداً ویرایش کنید",
+    "imageBefore": "/images/project-7-before.jpg",
+    "imageAfter": "/images/project-7-after.jpg",
+    "tags": ["هوش مصنوعی", "نمونه", "تبدیل عکس"]
+  },
+  {
+    "id": "project-8",
+    "title": "نمونه تبدیل عکس با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "توضیح این نمونه را بعداً ویرایش کنید",
+    "imageBefore": "/images/project-8-before.jpg",
+    "imageAfter": "/images/project-8-after.jpg",
+    "tags": ["هوش مصنوعی", "نمونه", "تبدیل عکس"]
+  },
+  {
+    "id": "project-9",
+    "title": "نمونه تبدیل عکس با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "توضیح این نمونه را بعداً ویرایش کنید",
+    "imageBefore": "/images/project-9-before.jpg",
+    "imageAfter": "/images/project-9-after.jpg",
+    "tags": ["هوش مصنوعی", "نمونه", "تبدیل عکس"]
+  }
+]

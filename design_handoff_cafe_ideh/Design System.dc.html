@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Reem+Kufi:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #5B54E8; color: #fff; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-feature-settings: "ss01"; direction: ltr; }
+  @keyframes floatA { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(22px, 30px) scale(1.06); } }
+  @keyframes floatB { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-26px, -22px); } }
+  @keyframes rotateWords { 0%, 18% { transform: translateY(0); } 25%, 43% { transform: translateY(-100%); } 50%, 68% { transform: translateY(-200%); } 75%, 93% { transform: translateY(-300%); } 100% { transform: translateY(-400%); } }
+  @keyframes sparkle { 0%, 100% { transform: rotate(45deg) scale(1); box-shadow: 0 2px 6px rgba(255,122,89,.5); } 50% { transform: rotate(45deg) scale(1.18); box-shadow: 0 3px 12px rgba(255,122,89,.8); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+</helmet>
+
+<div style="{{ rootStyle }}">
+<div dir="rtl" lang="fa" style="font-family: Vazirmatn, sans-serif; background: #F7F7FB; color: #34343F; min-height: 100vh; line-height: 1.8; -webkit-font-smoothing: antialiased;">
+
+  <!-- ===== Sticky header ===== -->
+  <div id="top" style="position: sticky; top: 0; z-index: 50; background: rgba(247,247,251,.82); backdrop-filter: blur(12px); border-bottom: 1px solid #E5E5EE;">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 11px; text-decoration: none;">
+        <div style="position: relative; width: 48px; height: 44px; flex: none;">
+          <div style="position: absolute; right: 0; top: 0; width: 35px; height: 35px; border-radius: 12px; background: linear-gradient(140deg, var(--brand,#5B54E8), var(--brand-deep,#3A34A8)); box-shadow: 0 6px 15px rgba(91,84,232,.34);"></div>
+          <div style="position: absolute; right: 7px; top: 7px; width: 13px; height: 13px; border-radius: 4px; border: 2px solid rgba(255,255,255,.55);"></div>
+          <div style="position: absolute; left: 0; bottom: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--accent,#FF7A59); border: 2.5px solid #F7F7FB; box-shadow: 0 3px 10px rgba(255,122,89,.5); display: flex; align-items: center; justify-content: center; animation: sparkle 3s ease-in-out infinite;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #fff;"></div>
+          </div>
+        </div>
+        <div style="line-height: 1.2;">
+          <div style="font-family: 'Reem Kufi', Vazirmatn, sans-serif; font-weight: 700; color: #15151E; font-size: 21px; letter-spacing: 0;">کافه ایده</div>
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent,#FF7A59); letter-spacing: .2px;">استودیوی شیوا رحیمی</div>
+        </div>
+      </a>
+      <div style="display: flex; gap: 22px; font-size: 13.5px; font-weight: 500; color: #6B6B7B;">
+        <a href="#colors" style="color: inherit; text-decoration: none;">رنگ‌ها</a>
+        <a href="#type" style="color: inherit; text-decoration: none;">تایپوگرافی</a>
+        <a href="#components" style="color: inherit; text-decoration: none;">کامپوننت‌ها</a>
+        <a href="#layout" style="color: inherit; text-decoration: none;">بخش‌ها</a>
+        <a href="#motion" style="color: inherit; text-decoration: none;">انیمیشن</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Cover ===== -->
+  <div style="max-width: 1140px; margin: 0 auto; padding: 28px 28px 0;">
+    <div data-reveal style="border-radius: 28px; overflow: hidden; background: linear-gradient(135deg, #9E74E4 0%, #6A46C4 100%); color: #fff; padding: 64px 56px; position: relative;">
+      <div style="position: absolute; left: -60px; top: -60px; width: 320px; height: 320px; border-radius: 50%; background: var(--accent,#FF7A59); opacity: .22; filter: blur(8px); animation: floatA 13s ease-in-out infinite;"></div>
+      <div style="position: absolute; left: 120px; bottom: -120px; width: 260px; height: 260px; border-radius: 50%; background: #fff; opacity: .08; animation: floatB 16s ease-in-out infinite;"></div>
+      <div style="position: relative;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); padding: 7px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; letter-spacing: .2px;">سیستم طراحی · استودیوی خلاق</div>
+        <h1 style="margin: 16px 0 0; font-family: 'Reem Kufi', Vazirmatn, sans-serif; font-size: 74px; font-weight: 700; line-height: 1.12; letter-spacing: 0;">کافه ایده</h1>
+        <div style="margin: 14px 0 0; max-width: 630px; font-size: 24px; font-weight: 700; line-height: 1.6; color: #fff;">ایده‌ی ساده‌ی شما — یک عکس، یک نیاز — را به <span style="color: var(--accent,#FF7A59);">اثری خاص</span> تبدیل می‌کنیم؛ در وب و در عکس.</div>
+        <p style="margin: 16px 0 0; max-width: 560px; font-size: 16.5px; line-height: 1.9; color: rgba(255,255,255,.8); font-weight: 400;">این سند، سیستم طراحی استودیوی کافه ایده است؛ راهنمای رنگ، تایپوگرافی، کامپوننت‌ها و چیدمان بخش‌ها برای ساخت پورتفولیویی راست‌چین و حرفه‌ای با React و Tailwind CSS.</p>
+        <div style="display: flex; align-items: baseline; gap: 12px; margin-top: 24px; font-size: 21px; font-weight: 800;">
+          <span style="color: rgba(255,255,255,.66); font-weight: 500; font-size: 18px;">تخصص در</span>
+          <span style="position: relative; display: inline-block; height: 1.5em; overflow: hidden;">
+            <span style="display: flex; flex-direction: column; animation: rotateWords 9s cubic-bezier(.7,0,.3,1) infinite;">
+              <span style="height: 1.5em; line-height: 1.5em; white-space: nowrap; color: var(--accent,#FF7A59);">طراحی وب</span>
+              <span style="height: 1.5em; line-height: 1.5em; white-space: nowrap; color: var(--accent,#FF7A59);">عکاسی خلاق</span>
+              <span style="height: 1.5em; line-height: 1.5em; white-space: nowrap; color: var(--accent,#FF7A59);">هویت بصری</span>
+              <span style="height: 1.5em; line-height: 1.5em; white-space: nowrap; color: var(--accent,#FF7A59);">تجربه کاربری</span>
+              <span style="height: 1.5em; line-height: 1.5em; white-space: nowrap; color: var(--accent,#FF7A59);">طراحی وب</span>
+            </span>
+          </span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;">
+          <span style="background: rgba(255,255,255,.16); padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;">Vazirmatn</span>
+          <span style="background: rgba(255,255,255,.16); padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;">React</span>
+          <span style="background: rgba(255,255,255,.16); padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;">Tailwind CSS</span>
+          <span style="background: rgba(255,255,255,.16); padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;">RTL · فارسی</span>
+          <span style="background: rgba(255,255,255,.16); padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;">Framer Motion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 01 Colors ===== -->
+  <div id="colors" style="max-width: 1140px; margin: 0 auto; padding: 64px 28px 0;">
+    <div data-reveal>
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <span class="mono" style="font-size: 14px; font-weight: 700; color: var(--accent,#FF7A59);">01</span>
+        <h2 style="margin: 0; font-family: 'Lalezar', Vazirmatn, sans-serif; font-size: 34px; font-weight: 400; color: #15151E; letter-spacing: .2px;">پالت رنگی</h2>
+      </div>
+      <p style="margin: 10px 0 0; max-width: 620px; color: #6B6B7B; font-size: 15.5px;">سه خانواده‌ی رنگی: <b style="color:#34343F;">برند</b> (آبی-بنفش، حرفه‌ای) برای هویت و لینک‌ها، <b style="color:#34343F;">اکسنت</b> (گرم) فقط برای CTA و تأکید، و <b style="color:#34343F;">خاکستری‌ها</b> برای متن و سطوح.</p>
+    </div>
+
+    <!-- brand scale -->
+    <div data-reveal style="margin-top: 28px;">
+      <div style="font-size: 13px; font-weight: 700; color: #15151E; margin-bottom: 12px;">برند · <span class="mono" style="color:#9A9AAA;font-weight:600;">brand</span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 12px;">
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 70px; background: #EEEEFC;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">brand-50</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#EEEEFC</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 70px; background: #DCDBF9;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">brand-100</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#DCDBF9</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 70px; background: #918CEC;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">brand-300</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#918CEC</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 2px solid var(--brand,#5B54E8); background: #fff; box-shadow: 0 8px 24px rgba(91,84,232,.22);"><div style="height: 70px; background: #5B54E8; position: relative;"><span style="position:absolute;top:8px;right:9px;background:#fff;color:#5B54E8;font-size:9px;font-weight:800;padding:2px 6px;border-radius:6px;">پایه</span></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">brand-500</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#5B54E8</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 70px; background: #4A43D1;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">brand-600</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#4A43D1</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 70px; background: #3A34A8;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">brand-700</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#3A34A8</div></div></div>
+      </div>
+    </div>
+
+    <!-- accent scale -->
+    <div data-reveal style="margin-top: 26px;">
+      <div style="font-size: 13px; font-weight: 700; color: #15151E; margin-bottom: 12px;">اکسنت · <span class="mono" style="color:#9A9AAA;font-weight:600;">accent</span> <span style="color:#9A9AAA;font-weight:500;font-size:12px;">(گزینه فعال از پنل Tweaks تغییر می‌کند)</span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 12px;">
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 70px; background: var(--accent-soft,#FFE7E0);"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">accent-soft</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#FFE7E0</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 2px solid var(--accent,#FF7A59); background: #fff; box-shadow: 0 8px 24px rgba(255,122,89,.24);"><div style="height: 70px; background: var(--accent,#FF7A59); position: relative;"><span style="position:absolute;top:8px;right:9px;background:#fff;color:var(--accent-deep,#E85D3A);font-size:9px;font-weight:800;padding:2px 6px;border-radius:6px;">CTA</span></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">accent-500</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#FF7A59</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 70px; background: var(--accent-deep,#E85D3A);"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">accent-700</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#E85D3A</div></div></div>
+        <div style="grid-column: span 3; border-radius: 14px; border: 1px dashed #E5E5EE; background: #fff; padding: 12px 14px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
+          <span style="font-size: 12px; font-weight: 700; color: #6B6B7B;">سه گزینه اکسنت:</span>
+          <span style="display:flex;align-items:center;gap:7px;font-size:12px;"><i style="width:16px;height:16px;border-radius:5px;background:#FF7A59;display:inline-block;"></i>مرجانی <span class="mono" style="color:#9A9AAA;">#FF7A59</span></span>
+          <span style="display:flex;align-items:center;gap:7px;font-size:12px;"><i style="width:16px;height:16px;border-radius:5px;background:#F0518A;display:inline-block;"></i>صورتی <span class="mono" style="color:#9A9AAA;">#F0518A</span></span>
+          <span style="display:flex;align-items:center;gap:7px;font-size:12px;"><i style="width:16px;height:16px;border-radius:5px;background:#E0A526;display:inline-block;"></i>طلایی <span class="mono" style="color:#9A9AAA;">#E0A526</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ink scale -->
+    <div data-reveal style="margin-top: 26px;">
+      <div style="font-size: 13px; font-weight: 700; color: #15151E; margin-bottom: 12px;">خاکستری‌های متن و سطوح · <span class="mono" style="color:#9A9AAA;font-weight:600;">ink</span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 12px;">
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 64px; background: #15151E;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">ink-900</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#15151E</div><div style="font-size:10.5px;color:#9A9AAA;margin-top:2px;">تیترها</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 64px; background: #34343F;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">ink-700</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#34343F</div><div style="font-size:10.5px;color:#9A9AAA;margin-top:2px;">متن بدنه</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 64px; background: #6B6B7B;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">ink-500</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#6B6B7B</div><div style="font-size:10.5px;color:#9A9AAA;margin-top:2px;">ثانویه</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 64px; background: #9A9AAA;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">ink-400</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#9A9AAA</div><div style="font-size:10.5px;color:#9A9AAA;margin-top:2px;">caption</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 64px; background: #E5E5EE;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">ink-200</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#E5E5EE</div><div style="font-size:10.5px;color:#9A9AAA;margin-top:2px;">بوردر</div></div></div>
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E5E5EE; background: #fff;"><div style="height: 64px; background: #F7F7FB;"></div><div style="padding: 9px 11px;"><div style="font-size: 12px; font-weight: 700; color: #15151E;">bg-soft</div><div class="mono" style="font-size: 11px; color: #9A9AAA;">#F7F7FB</div><div style="font-size:10.5px;color:#9A9AAA;margin-top:2px;">پس‌زمینه</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 02 Typography ===== -->
+  <div id="type" style="max-width: 1140px; margin: 0 auto; padding: 64px 28px 0;">
+    <div data-reveal>
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <span class="mono" style="font-size: 14px; font-weight: 700; color: var(--accent,#FF7A59);">02</span>
+        <h2 style="margin: 0; font-family: 'Lalezar', Vazirmatn, sans-serif; font-size: 34px; font-weight: 400; color: #15151E; letter-spacing: .2px;">تایپوگرافی</h2>
+      </div>
+      <p style="margin: 10px 0 0; max-width: 620px; color: #6B6B7B; font-size: 15.5px;">سه فونت: <b style="color:#34343F;">Reem Kufi</b> برای نام برند/لوگو (کوفی هندسی، حرفه‌ای)، <b style="color:#34343F;">Lalezar</b> برای تیترهای بخش‌ها، و <b style="color:#34343F;">Vazirmatn</b> برای متن بدنه (خوانا). به‌خاطر ارتفاع حروف فارسی، line-height متن بدنه سخاوتمندانه ۱.۸ است.</p>
+    </div>
+
+    <div data-reveal style="margin-top: 24px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 8px 28px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0; border-bottom: 1px solid #F0F0F5;">
+        <div style="font-family: 'Lalezar', Vazirmatn, sans-serif; font-size: 46px; font-weight: 400; color: #15151E; line-height: 1.15; letter-spacing: .2px;">ایده‌ها اینجا شکل می‌گیرند</div>
+        <div class="mono" style="font-size: 12px; color: #9A9AAA; white-space: nowrap; text-align: left;">H1 · Lalezar<br>44px · lh 1.15</div>
+      </div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0; border-bottom: 1px solid #F0F0F5;">
+        <div style="font-family: 'Lalezar', Vazirmatn, sans-serif; font-size: 33px; font-weight: 400; color: #15151E; line-height: 1.25; letter-spacing: .2px;">عنوان بخش‌های اصلی</div>
+        <div class="mono" style="font-size: 12px; color: #9A9AAA; white-space: nowrap; text-align: left;">H2 · Lalezar<br>32px · lh 1.25</div>
+      </div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0; border-bottom: 1px solid #F0F0F5;">
+        <div style="font-size: 22px; font-weight: 700; color: #15151E; line-height: 1.3;">تیتر کارت و زیربخش</div>
+        <div class="mono" style="font-size: 12px; color: #9A9AAA; white-space: nowrap; text-align: left;">H3 · 22px<br>700 · lh 1.3</div>
+      </div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0; border-bottom: 1px solid #F0F0F5;">
+        <div style="font-size: 16px; font-weight: 400; color: #34343F; line-height: 1.8; max-width: 560px;">متن بدنه برای پاراگراف‌ها و توضیحات. وزیرمتن خوانایی بالایی در اندازه‌های متوسط دارد و برای متن‌های فارسی طولانی مناسب است.</div>
+        <div class="mono" style="font-size: 12px; color: #9A9AAA; white-space: nowrap; text-align: left;">Body · 16px<br>400 · lh 1.8</div>
+      </div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0;">
+        <div style="font-size: 13px; font-weight: 500; color: #6B6B7B; line-height: 1.6;">کپشن، برچسب و متن کمکی فرم</div>
+        <div class="mono" style="font-size: 12px; color: #9A9AAA; white-space: nowrap; text-align: left;">Caption · 13px<br>500 · lh 1.6</div>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px;">
+      <div style="flex: 1; min-width: 150px; background: #fff; border: 1px solid #E5E5EE; border-radius: 14px; padding: 14px 16px;"><div class="mono" style="font-size: 11px; color: #9A9AAA;">weights</div><div style="margin-top: 6px; display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline;"><span style="font-weight:400;color:#34343F;">۴۰۰</span><span style="font-weight:500;color:#34343F;">۵۰۰</span><span style="font-weight:600;color:#34343F;">۶۰۰</span><span style="font-weight:700;color:#34343F;">۷۰۰</span><span style="font-weight:800;color:#34343F;">۸۰۰</span><span style="font-weight:900;color:#34343F;">۹۰۰</span></div></div>
+      <div style="flex: 1; min-width: 150px; background: #fff; border: 1px solid #E5E5EE; border-radius: 14px; padding: 14px 16px;"><div class="mono" style="font-size: 11px; color: #9A9AAA;">numerals</div><div style="margin-top: 6px; font-size: 18px; font-weight: 600; color: #34343F;">۰۱۲۳۴۵۶۷۸۹ · ۱٬۴۰۳</div></div>
+    </div>
+  </div>
+
+  <!-- ===== 03 Components ===== -->
+  <div id="components" style="max-width: 1140px; margin: 0 auto; padding: 64px 28px 0;">
+    <div data-reveal>
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <span class="mono" style="font-size: 14px; font-weight: 700; color: var(--accent,#FF7A59);">03</span>
+        <h2 style="margin: 0; font-family: 'Lalezar', Vazirmatn, sans-serif; font-size: 34px; font-weight: 400; color: #15151E; letter-spacing: .2px;">کامپوننت‌های UI</h2>
+      </div>
+      <p style="margin: 10px 0 0; max-width: 620px; color: #6B6B7B; font-size: 15.5px;">گوشه‌ها از <span class="mono" style="color:#34343F;">--radius</span> پیروی می‌کنند (قابل تنظیم در Tweaks). سایه‌ها نرم و کم‌رنگ، با ته‌رنگ برند.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;">
+      <!-- buttons -->
+      <div data-reveal style="background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; color: #15151E; margin-bottom: 16px;">دکمه‌ها</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <button style="border: none; cursor: pointer; font-family: inherit; background: var(--accent,#FF7A59); color: #fff; font-weight: 700; font-size: 15px; padding: 13px 26px; border-radius: var(--radius,16px); box-shadow: 0 8px 20px rgba(255,122,89,.35);" style-hover="filter: brightness(1.05); transform: translateY(-1px);">شروع همکاری</button>
+          <button style="cursor: pointer; font-family: inherit; background: #fff; color: var(--brand,#5B54E8); font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: var(--radius,16px); border: 1.6px solid var(--brand,#5B54E8);" style-hover="background: #EEEEFC;">نمونه‌کارها</button>
+          <button style="border: none; cursor: pointer; font-family: inherit; background: transparent; color: #6B6B7B; font-weight: 600; font-size: 15px; padding: 12px 14px; border-radius: var(--radius,16px);" style-hover="color: #15151E;">بیشتر بدانید ←</button>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center; margin-top: 14px;">
+          <button disabled style="font-family: inherit; background: #E5E5EE; color: #9A9AAA; font-weight: 700; font-size: 15px; padding: 13px 26px; border-radius: var(--radius,16px); border: none; cursor: not-allowed;">غیرفعال</button>
+          <span class="mono" style="font-size: 11px; color: #9A9AAA;">primary · secondary · ghost · disabled</span>
+        </div>
+      </div>
+
+      <!-- badges -->
+      <div data-reveal style="background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; color: #15151E; margin-bottom: 16px;">برچسب / تگ پروژه</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="background: #EEEEFC; color: #3A34A8; font-weight: 600; font-size: 13px; padding: 7px 14px; border-radius: 999px;">UI/UX</span>
+          <span style="background: #EEEEFC; color: #3A34A8; font-weight: 600; font-size: 13px; padding: 7px 14px; border-radius: 999px;">برندینگ</span>
+          <span style="background: #EEEEFC; color: #3A34A8; font-weight: 600; font-size: 13px; padding: 7px 14px; border-radius: 999px;">وب‌سایت</span>
+          <span style="background: var(--accent-soft,#FFE7E0); color: var(--accent-deep,#E85D3A); font-weight: 700; font-size: 13px; padding: 7px 14px; border-radius: 999px;">منتخب ★</span>
+        </div>
+        <div style="font-size: 13px; font-weight: 700; color: #15151E; margin: 22px 0 12px;">آواتار + امتیاز</div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--brand,#5B54E8), var(--accent,#FF7A59)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800;">ر</div>
+          <div style="color: var(--accent,#FF7A59); font-size: 15px; letter-spacing: 2px;">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- card -->
+      <div data-reveal style="background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; color: #15151E; margin-bottom: 16px;">کارت پروژه</div>
+        <div style="border-radius: var(--radius,16px); overflow: hidden; border: 1px solid #F0F0F5; box-shadow: 0 14px 34px rgba(91,84,232,.10);">
+          <div style="height: 130px; background: repeating-linear-gradient(45deg, #EEEDF6, #EEEDF6 9px, #F7F7FB 9px, #F7F7FB 18px); display: flex; align-items: center; justify-content: center;"><span class="mono" style="font-size: 12px; color: #9A9AAA;">project shot</span></div>
+          <div style="padding: 16px 18px;">
+            <span style="background: #EEEEFC; color: #3A34A8; font-weight: 600; font-size: 11.5px; padding: 4px 10px; border-radius: 999px;">برندینگ</span>
+            <div style="font-size: 18px; font-weight: 700; color: #15151E; margin-top: 10px;">هویت بصری کافه نقش</div>
+            <p style="margin: 6px 0 0; font-size: 13.5px; color: #6B6B7B; line-height: 1.7;">طراحی لوگو، بسته‌بندی و راهنمای برند.</p>
+          </div>
+        </div>
+        <div class="mono" style="font-size: 11px; color: #9A9AAA; margin-top: 12px;">radius var(--radius) · shadow rgba(brand, .10)</div>
+      </div>
+
+      <!-- form -->
+      <div data-reveal style="background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; color: #15151E; margin-bottom: 16px;">فیلدهای فرم</div>
+        <label style="display: block; font-size: 13px; font-weight: 600; color: #34343F; margin-bottom: 6px;">نام شما</label>
+        <input type="text" placeholder="مثلاً: مریم احمدی" style="width: 100%; font-family: inherit; font-size: 14.5px; color: #34343F; padding: 12px 14px; border-radius: 12px; border: 1.5px solid #E5E5EE; background: #fff; outline: none;" style-focus="border-color: var(--brand,#5B54E8); box-shadow: 0 0 0 3px rgba(91,84,232,.16);">
+        <label style="display: block; font-size: 13px; font-weight: 600; color: #34343F; margin: 14px 0 6px;">پیام <span class="mono" style="color:#9A9AAA;font-weight:500;">(focus)</span></label>
+        <textarea rows="3" placeholder="درباره پروژه‌تان بنویسید…" style="width: 100%; font-family: inherit; font-size: 14.5px; color: #34343F; padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--brand,#5B54E8); background: #fff; outline: none; box-shadow: 0 0 0 3px rgba(91,84,232,.16); resize: none;"></textarea>
+        <div class="mono" style="font-size: 11px; color: #9A9AAA; margin-top: 10px;">border ink-200 → focus ring brand /16</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 04 Layout / Section wireframes ===== -->
+  <div id="layout" style="max-width: 1140px; margin: 0 auto; padding: 64px 28px 0;">
+    <div data-reveal>
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <span class="mono" style="font-size: 14px; font-weight: 700; color: var(--accent,#FF7A59);">04</span>
+        <h2 style="margin: 0; font-family: 'Lalezar', Vazirmatn, sans-serif; font-size: 34px; font-weight: 400; color: #15151E; letter-spacing: .2px;">چیدمان بخش‌ها</h2>
+      </div>
+      <p style="margin: 10px 0 0; max-width: 620px; color: #6B6B7B; font-size: 15.5px;">وایرفریم و دستور پیاده‌سازی هر بخش، به‌ترتیب از بالا به پایین. همه‌چیز راست‌چین: نقطه شروع سمت راست است.</p>
+    </div>
+
+    <!-- Navbar -->
+    <div data-reveal style="margin-top: 24px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 22px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;">
+      <div style="border: 1.5px dashed #D7D7E3; border-radius: 14px; padding: 16px; background: #FBFBFE; display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+        <div style="width: 70px; height: 30px; border-radius: 8px; background: var(--brand,#5B54E8); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700;">لوگو</div>
+        <div style="display: flex; gap: 12px;"><span style="width:42px;height:10px;border-radius:5px;background:#D7D7E3;"></span><span style="width:42px;height:10px;border-radius:5px;background:#D7D7E3;"></span><span style="width:42px;height:10px;border-radius:5px;background:#D7D7E3;"></span></div>
+        <div style="width: 78px; height: 32px; border-radius: 10px; background: var(--accent,#FF7A59);"></div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 700; color: #15151E;">۱ · Navbar</h3>
+        <p style="margin: 0; font-size: 14px; color: #6B6B7B; line-height: 1.8;">لوگو سمت <b style="color:#34343F;">راست</b>، لینک‌های لنگری وسط/چپ، دکمه CTA با اکسنت در انتها (چپ). ارتفاع ۶۴–۷۲px، چسبان (sticky) با پس‌زمینه شیشه‌ای و بوردر زیرین <span class="mono" style="color:#9A9AAA;">ink-200</span>. در موبایل: منوی همبرگری.</p>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div data-reveal style="margin-top: 16px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 22px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;">
+      <div style="border: 1.5px dashed #D7D7E3; border-radius: 14px; padding: 16px; background: linear-gradient(135deg, #EEEEFC, #FBFBFE); display: flex; gap: 14px; align-items: center;">
+        <div style="flex: 1.1; display: flex; flex-direction: column; gap: 8px;">
+          <span style="width: 84%; height: 16px; border-radius: 5px; background: #C9C7E8;"></span>
+          <span style="width: 70%; height: 16px; border-radius: 5px; background: #C9C7E8;"></span>
+          <span style="width: 90%; height: 8px; border-radius: 4px; background: #DDDCEC; margin-top: 4px;"></span>
+          <span style="width: 80%; height: 8px; border-radius: 4px; background: #DDDCEC;"></span>
+          <div style="display: flex; gap: 8px; margin-top: 8px;"><span style="width: 72px; height: 26px; border-radius: 8px; background: var(--accent,#FF7A59);"></span><span style="width: 64px; height: 26px; border-radius: 8px; border: 1.5px solid var(--brand,#5B54E8);"></span></div>
+        </div>
+        <div style="flex: .9; height: 118px; border-radius: 12px; background: repeating-linear-gradient(45deg, #DDDCEC, #DDDCEC 8px, #EEEEFC 8px, #EEEEFC 16px); display: flex; align-items: center; justify-content: center;"><span class="mono" style="font-size: 10px; color: #8A8A9C;">illustration</span></div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 700; color: #15151E;">۲ · Hero</h3>
+        <p style="margin: 0; font-size: 14px; color: #6B6B7B; line-height: 1.8;">دو ستونه: <b style="color:#34343F;">راست</b> متن (H1 + توضیح + دو دکمه: CTA پر و ثانویه خطی)، <b style="color:#34343F;">چپ</b> ایلاستریشن یا عکس. پس‌زمینه گرادیان ملایم <span class="mono" style="color:#9A9AAA;">brand-50 → سفید</span> یا یک هاله شعاعی برند. در موبایل تک‌ستونه، متن بالا.</p>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div data-reveal style="margin-top: 16px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 22px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;">
+      <div style="border: 1.5px dashed #D7D7E3; border-radius: 14px; padding: 16px; background: #FBFBFE; display: flex; gap: 14px; align-items: center;">
+        <div style="width: 96px; height: 118px; border-radius: 12px; background: repeating-linear-gradient(45deg, #DDDCEC, #DDDCEC 8px, #EEEEFC 8px, #EEEEFC 16px); display: flex; align-items: center; justify-content: center;"><span class="mono" style="font-size: 10px; color: #8A8A9C;">photo</span></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 7px;">
+          <span style="width: 60%; height: 14px; border-radius: 5px; background: #C9C7E8;"></span>
+          <span style="width: 92%; height: 8px; border-radius: 4px; background: #DDDCEC;"></span>
+          <span style="width: 85%; height: 8px; border-radius: 4px; background: #DDDCEC;"></span>
+          <div style="display: flex; gap: 8px; margin-top: 8px;"><span style="width: 56px; height: 34px; border-radius: 8px; background: #EEEEFC;"></span><span style="width: 56px; height: 34px; border-radius: 8px; background: #EEEEFC;"></span><span style="width: 56px; height: 34px; border-radius: 8px; background: #EEEEFC;"></span></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 700; color: #15151E;">۳ · About</h3>
+        <p style="margin: 0; font-size: 14px; color: #6B6B7B; line-height: 1.8;">عکس پرتره سمت <b style="color:#34343F;">راست</b>، متن معرفی سمت چپ + ردیف آمار (سال‌ها تجربه، پروژه، مشتری) در سه چیپ <span class="mono" style="color:#9A9AAA;">brand-50</span>. عدد بزرگ ۸۰۰ + برچسب کوچک <span class="mono" style="color:#9A9AAA;">ink-500</span>.</p>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div data-reveal style="margin-top: 16px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 22px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;">
+      <div style="border: 1.5px dashed #D7D7E3; border-radius: 14px; padding: 16px; background: #FBFBFE; display: flex; gap: 10px;">
+        <div style="flex: 1; background: #fff; border: 1px solid #ECECF4; border-radius: 12px; padding: 12px; box-shadow: 0 8px 18px rgba(91,84,232,.08);"><div style="width: 34px; height: 34px; border-radius: 10px; background: var(--accent-soft,#FFE7E0); display: flex; align-items: center; justify-content: center; color: var(--accent,#FF7A59); font-size: 16px;">◆</div><span style="display: block; width: 70%; height: 10px; border-radius: 5px; background: #C9C7E8; margin-top: 10px;"></span><span style="display: block; width: 90%; height: 7px; border-radius: 4px; background: #DDDCEC; margin-top: 7px;"></span></div>
+        <div style="flex: 1; background: #fff; border: 1px solid #ECECF4; border-radius: 12px; padding: 12px; box-shadow: 0 8px 18px rgba(91,84,232,.08);"><div style="width: 34px; height: 34px; border-radius: 10px; background: var(--accent-soft,#FFE7E0); display: flex; align-items: center; justify-content: center; color: var(--accent,#FF7A59); font-size: 16px;">●</div><span style="display: block; width: 70%; height: 10px; border-radius: 5px; background: #C9C7E8; margin-top: 10px;"></span><span style="display: block; width: 90%; height: 7px; border-radius: 4px; background: #DDDCEC; margin-top: 7px;"></span></div>
+        <div style="flex: 1; background: #fff; border: 1px solid #ECECF4; border-radius: 12px; padding: 12px; box-shadow: 0 8px 18px rgba(91,84,232,.08);"><div style="width: 34px; height: 34px; border-radius: 10px; background: var(--accent-soft,#FFE7E0); display: flex; align-items: center; justify-content: center; color: var(--accent,#FF7A59); font-size: 16px;">▲</div><span style="display: block; width: 70%; height: 10px; border-radius: 5px; background: #C9C7E8; margin-top: 10px;"></span><span style="display: block; width: 90%; height: 7px; border-radius: 4px; background: #DDDCEC; margin-top: 7px;"></span></div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 700; color: #15151E;">۴ · Services</h3>
+        <p style="margin: 0; font-size: 14px; color: #6B6B7B; line-height: 1.8;">سه کارت هم‌عرض (موبایل: تک‌ستونه). هر کارت: آیکون خطی در مربع گرد <span class="mono" style="color:#9A9AAA;">accent-soft</span>، تیتر H3، توضیح کوتاه. سایه نرم <span class="mono" style="color:#9A9AAA;">0 8px 18px rgba(brand,.08)</span>؛ در hover کمی بالا بیاید و سایه پررنگ‌تر شود.</p>
+      </div>
+    </div>
+
+    <!-- Portfolio -->
+    <div data-reveal style="margin-top: 16px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 22px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;">
+      <div style="border: 1.5px dashed #D7D7E3; border-radius: 14px; padding: 16px; background: #FBFBFE; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+        <div style="aspect-ratio: 4/3; border-radius: 10px; background: repeating-linear-gradient(45deg, #DDDCEC, #DDDCEC 7px, #EEEEFC 7px, #EEEEFC 14px); position: relative;"><div style="position: absolute; inset: 0; border-radius: 10px; background: var(--brand,#5B54E8); opacity: .82; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; font-weight: 700;">hover</div></div>
+        <div style="aspect-ratio: 4/3; border-radius: 10px; background: repeating-linear-gradient(45deg, #DDDCEC, #DDDCEC 7px, #EEEEFC 7px, #EEEEFC 14px);"></div>
+        <div style="aspect-ratio: 4/3; border-radius: 10px; background: repeating-linear-gradient(45deg, #DDDCEC, #DDDCEC 7px, #EEEEFC 7px, #EEEEFC 14px);"></div>
+        <div style="aspect-ratio: 4/3; border-radius: 10px; background: repeating-linear-gradient(45deg, #DDDCEC, #DDDCEC 7px, #EEEEFC 7px, #EEEEFC 14px);"></div>
+        <div style="aspect-ratio: 4/3; border-radius: 10px; background: repeating-linear-gradient(45deg, #DDDCEC, #DDDCEC 7px, #EEEEFC 7px, #EEEEFC 14px);"></div>
+        <div style="aspect-ratio: 4/3; border-radius: 10px; background: repeating-linear-gradient(45deg, #DDDCEC, #DDDCEC 7px, #EEEEFC 7px, #EEEEFC 14px);"></div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 700; color: #15151E;">۵ · Portfolio</h3>
+        <p style="margin: 0; font-size: 14px; color: #6B6B7B; line-height: 1.8;">گرید <b style="color:#34343F;">سه‌ستونه</b> دسکتاپ، دوستونه تبلت، تک‌ستونه موبایل. نسبت تصاویر ۴:۳. در hover: زوم ملایم تصویر (scale 1.05) + لایه برند نیمه‌شفاف با عنوان و تگ پروژه که از پایین بالا می‌آید. بالای بخش، فیلتر دسته‌بندی با تگ‌ها.</p>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div data-reveal style="margin-top: 16px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 22px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;">
+      <div style="border: 1.5px dashed #D7D7E3; border-radius: 14px; padding: 16px; background: #FBFBFE; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <div style="width: 78%; background: #fff; border: 1px solid #ECECF4; border-radius: 12px; padding: 14px; box-shadow: 0 8px 18px rgba(91,84,232,.08);"><div style="color: var(--accent,#FF7A59); font-size: 12px; letter-spacing: 1px;">★★★★★</div><span style="display: block; width: 95%; height: 8px; border-radius: 4px; background: #DDDCEC; margin-top: 8px;"></span><span style="display: block; width: 80%; height: 8px; border-radius: 4px; background: #DDDCEC; margin-top: 6px;"></span><div style="display: flex; align-items: center; gap: 8px; margin-top: 12px;"><div style="width: 26px; height: 26px; border-radius: 50%; background: var(--brand,#5B54E8);"></div><span style="width: 70px; height: 9px; border-radius: 5px; background: #C9C7E8;"></span></div></div>
+        <div style="display: flex; gap: 6px; align-items: center;"><span style="width: 20px; height: 6px; border-radius: 3px; background: var(--brand,#5B54E8);"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #D7D7E3;"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #D7D7E3;"></span></div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 700; color: #15151E;">۶ · Testimonials</h3>
+        <p style="margin: 0; font-size: 14px; color: #6B6B7B; line-height: 1.8;">پیشنهاد: <b style="color:#34343F;">اسلایدر کارتی</b>. دسکتاپ ۲–۳ کارت هم‌زمان، موبایل یک کارت با اسواپ. هر کارت: ستاره‌ها با اکسنت، نقل‌قول، آواتار + نام + سمت. ناوبری با نقطه‌ها (dots) و کشیدن. جهت اسلاید راست‌به‌چپ.</p>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div data-reveal style="margin-top: 16px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 22px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;">
+      <div style="border: 1.5px dashed #D7D7E3; border-radius: 14px; padding: 16px; background: #FBFBFE; display: flex; gap: 12px;">
+        <div style="flex: 1.1; display: flex; flex-direction: column; gap: 8px;">
+          <span style="width: 100%; height: 30px; border-radius: 8px; background: #fff; border: 1.5px solid #DDDCEC;"></span>
+          <span style="width: 100%; height: 30px; border-radius: 8px; background: #fff; border: 1.5px solid #DDDCEC;"></span>
+          <span style="width: 100%; height: 56px; border-radius: 8px; background: #fff; border: 1.5px solid var(--brand,#5B54E8);"></span>
+          <span style="width: 110px; height: 30px; border-radius: 8px; background: var(--accent,#FF7A59);"></span>
+        </div>
+        <div style="flex: .8; display: flex; flex-direction: column; gap: 8px; justify-content: center;">
+          <span style="width: 90%; height: 12px; border-radius: 5px; background: #C9C7E8;"></span>
+          <span style="width: 80%; height: 9px; border-radius: 4px; background: #DDDCEC;"></span>
+          <span style="width: 75%; height: 9px; border-radius: 4px; background: #DDDCEC;"></span>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 700; color: #15151E;">۷ · Contact Form</h3>
+        <p style="margin: 0; font-size: 14px; color: #6B6B7B; line-height: 1.8;">دو ستونه: <b style="color:#34343F;">راست</b> فرم (نام، ایمیل، پیام + دکمه CTA با اکسنت)، <b style="color:#34343F;">چپ</b> اطلاعات تماس و شبکه‌های اجتماعی. فیلدها با حالت focus حلقه برند. روی پس‌زمینه <span class="mono" style="color:#9A9AAA;">bg-soft</span> داخل یک کارت سفید بزرگ.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div data-reveal style="margin-top: 16px; background: #fff; border: 1px solid #E5E5EE; border-radius: 20px; padding: 22px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;">
+      <div style="border: 1.5px dashed #D7D7E3; border-radius: 14px; padding: 16px; background: var(--brand-deep,#3A34A8); display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div style="width: 70px; height: 24px; border-radius: 7px; background: rgba(255,255,255,.22);"></div>
+          <div style="display: flex; gap: 16px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="width: 50px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.3);"></span><span style="width: 40px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.18);"></span><span style="width: 44px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.18);"></span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="width: 50px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.3);"></span><span style="width: 40px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.18);"></span><span style="width: 44px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.18);"></span></div>
+          </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,.15); padding-top: 10px; display: flex; justify-content: space-between;"><span style="width: 120px; height: 7px; border-radius: 4px; background: rgba(255,255,255,.18);"></span><div style="display: flex; gap: 6px;"><span style="width: 18px; height: 18px; border-radius: 6px; background: rgba(255,255,255,.22);"></span><span style="width: 18px; height: 18px; border-radius: 6px; background: rgba(255,255,255,.22);"></span><span style="width: 18px; height: 18px; border-radius: 6px; background: rgba(255,255,255,.22);"></span></div></div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 700; color: #15151E;">۸ · Footer</h3>
+        <p style="margin: 0; font-size: 14px; color: #6B6B7B; line-height: 1.8;">پس‌زمینه تیره <span class="mono" style="color:#9A9AAA;">brand-700</span>، متن روشن. لوگو + چند ستون لینک، نوار پایین با کپی‌رایت و آیکون شبکه‌های اجتماعی. آیکون‌ها در hover به اکسنت تغییر رنگ دهند.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 05 Motion ===== -->
+  <div id="motion" style="max-width: 1140px; margin: 0 auto; padding: 64px 28px 0;">
+    <div data-reveal>
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <span class="mono" style="font-size: 14px; font-weight: 700; color: var(--accent,#FF7A59);">05</span>
+        <h2 style="margin: 0; font-family: 'Lalezar', Vazirmatn, sans-serif; font-size: 34px; font-weight: 400; color: #15151E; letter-spacing: .2px;">انیمیشن</h2>
+      </div>
+      <p style="margin: 10px 0 0; max-width: 620px; color: #6B6B7B; font-size: 15.5px;">الگوی اصلی: <b style="color:#34343F;">fade-up هنگام اسکرول</b>. هر بخش هنگام ورود به دید، با محو‌شدن و حرکت ملایم از پایین ظاهر می‌شود — دقیقاً مثل همین صفحه که در حال اسکرول دیدید.</p>
+    </div>
+
+    <div data-reveal style="margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div style="background: #1B1B26; border-radius: 18px; padding: 22px; overflow: auto;">
+        <div class="mono" style="font-size: 11px; color: #7A7A92; margin-bottom: 10px;">Framer Motion · variants</div>
+        <pre id="fm-code" class="mono" style="margin: 0; font-size: 12.5px; line-height: 1.9; color: #E6E6F0; text-align: left; white-space: pre;"></pre>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="background: #fff; border: 1px solid #E5E5EE; border-radius: 16px; padding: 16px 18px;"><div style="font-size: 13px; font-weight: 700; color: #15151E;">زمان‌بندی</div><p style="margin: 6px 0 0; font-size: 13.5px; color: #6B6B7B; line-height: 1.7;">مدت <span class="mono" style="color:#34343F;">۰.۶ ثانیه</span>، حرکت ۲۴–۲۸px، فقط یک بار (<span class="mono" style="color:#34343F;">once: true</span>).</p></div>
+        <div style="background: #fff; border: 1px solid #E5E5EE; border-radius: 16px; padding: 16px 18px;"><div style="font-size: 13px; font-weight: 700; color: #15151E;">Stagger در کارت‌ها</div><p style="margin: 6px 0 0; font-size: 13.5px; color: #6B6B7B; line-height: 1.7;">کارت‌های Services و Portfolio با <span class="mono" style="color:#34343F;">staggerChildren: 0.08</span> یکی‌یکی بیایند.</p></div>
+        <div style="background: #fff; border: 1px solid #E5E5EE; border-radius: 16px; padding: 16px 18px;"><div style="font-size: 13px; font-weight: 700; color: #15151E;">Micro-interactions</div><p style="margin: 6px 0 0; font-size: 13.5px; color: #6B6B7B; line-height: 1.7;">دکمه‌ها <span class="mono" style="color:#34343F;">whileHover=&#123;&#123; y: -2 &#125;&#125;</span>؛ کارت‌ها سایه و بالا‌آمدن. به <span class="mono" style="color:#34343F;">prefers-reduced-motion</span> احترام بگذارید.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 06 Tailwind config ===== -->
+  <div style="max-width: 1140px; margin: 0 auto; padding: 64px 28px 0;">
+    <div data-reveal>
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <span class="mono" style="font-size: 14px; font-weight: 700; color: var(--accent,#FF7A59);">06</span>
+        <h2 class="mono" style="margin: 0; font-size: 27px; font-weight: 700; color: #15151E; letter-spacing: -.5px;">tailwind.config.js</h2>
+      </div>
+      <p style="margin: 10px 0 0; max-width: 620px; color: #6B6B7B; font-size: 15.5px;">رنگ‌ها با نام‌های <span class="mono" style="color:#34343F;">brand</span> / <span class="mono" style="color:#34343F;">accent</span> / <span class="mono" style="color:#34343F;">ink</span>. مقادیر canonical (اکسنت پیش‌فرض مرجانی).</p>
+    </div>
+    <div data-reveal style="margin-top: 20px; background: #1B1B26; border-radius: 18px; padding: 24px; overflow: auto;">
+      <pre class="mono" style="margin: 0; font-size: 12.5px; line-height: 1.95; color: #E6E6F0; text-align: left; white-space: pre;"><span style="color:#7A7A92;">// tailwind.config.js — RTL via plugin tailwindcss-rtl</span>
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: [<span style="color:#9AE6B4;">'Vazirmatn'</span>, <span style="color:#9AE6B4;">'sans-serif'</span>],
+      },
+      colors: {
+        brand: {
+          50:<span style="color:#FFB39A;">'#EEEEFC'</span>, 100:<span style="color:#FFB39A;">'#DCDBF9'</span>, 300:<span style="color:#FFB39A;">'#918CEC'</span>,
+          500:<span style="color:#FFB39A;">'#5B54E8'</span>, 600:<span style="color:#FFB39A;">'#4A43D1'</span>, 700:<span style="color:#FFB39A;">'#3A34A8'</span>,
+          DEFAULT:<span style="color:#FFB39A;">'#5B54E8'</span>,
+        },
+        accent: {
+          soft:<span style="color:#FFB39A;">'#FFE7E0'</span>, 300:<span style="color:#FFB39A;">'#FFA98F'</span>,
+          500:<span style="color:#FFB39A;">'#FF7A59'</span>, 700:<span style="color:#FFB39A;">'#E85D3A'</span>,
+          DEFAULT:<span style="color:#FFB39A;">'#FF7A59'</span>,
+        },
+        ink: {
+          900:<span style="color:#FFB39A;">'#15151E'</span>, 700:<span style="color:#FFB39A;">'#34343F'</span>, 500:<span style="color:#FFB39A;">'#6B6B7B'</span>,
+          400:<span style="color:#FFB39A;">'#9A9AAA'</span>, 200:<span style="color:#FFB39A;">'#E5E5EE'</span>,
+        },
+        soft:<span style="color:#FFB39A;">'#F7F7FB'</span>,
+      },
+      borderRadius: { xl: <span style="color:#9AE6B4;">'16px'</span> },
+      boxShadow: {
+        card: <span style="color:#9AE6B4;">'0 14px 34px rgba(91,84,232,.10)'</span>,
+      },
+    },
+  },
+};</pre>
+    </div>
+  </div>
+
+  <!-- ===== Footer of doc ===== -->
+  <div style="max-width: 1140px; margin: 0 auto; padding: 56px 28px 64px;">
+    <div data-reveal style="border-top: 1px solid #E5E5EE; padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <div style="font-size: 13.5px; color: #9A9AAA;">کافه ایده · استودیوی شیوا رحیمی · ۱۴۰۳</div>
+      <div class="mono" style="font-size: 12px; color: #C9C7E8;">React · Tailwind · Vazirmatn · Framer Motion</div>
+    </div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;مرجانی&quot;,&quot;صورتی&quot;,&quot;طلایی&quot;],&quot;default&quot;:&quot;مرجانی&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;تم&quot;},&quot;brand&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:[&quot;#5B54E8&quot;,&quot;#6D5BF5&quot;,&quot;#4F46E5&quot;,&quot;#7C3AED&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;تم&quot;},&quot;radius&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:20,&quot;min&quot;:6,&quot;max&quot;:28,&quot;step&quot;:2,&quot;unit&quot;:&quot;px&quot;,&quot;section&quot;:&quot;تم&quot;}}">
+class Component extends DCLogic {
+  darken(hex, amt) {
+    try {
+      const n = parseInt(hex.replace('#', ''), 16);
+      let r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+      r = Math.round(r * (1 - amt)); g = Math.round(g * (1 - amt)); b = Math.round(b * (1 - amt));
+      return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+    } catch (e) { return '#3A34A8'; }
+  }
+  accentMap() {
+    return {
+      'مرجانی': { a: '#FF7A59', d: '#E85D3A', s: '#FFE7E0' },
+      'صورتی': { a: '#F0518A', d: '#D43A72', s: '#FCE3EC' },
+      'طلایی': { a: '#E0A526', d: '#C2860C', s: '#FBF0D6' },
+    };
+  }
+  renderVals() {
+    const brand = this.props.brand || '#5B54E8';
+    const deep = this.darken(brand, 0.3);
+    const ac = this.accentMap()[this.props.accent] || this.accentMap()['مرجانی'];
+    const r = this.props.radius ?? 16;
+    const rootStyle = `--brand:${brand};--brand-deep:${deep};--accent:${ac.a};--accent-deep:${ac.d};--accent-soft:${ac.s};--radius:${r}px;`;
+    return { rootStyle };
+  }
+  componentDidMount() {
+    const codeEl = document.getElementById('fm-code');
+    if (codeEl) codeEl.textContent = [
+      'const fadeUp = {',
+      '  hidden: { opacity: 0, y: 26 },',
+      '  show: {',
+      '    opacity: 1, y: 0,',
+      '    transition: { duration: 0.6,',
+      '      ease: [0.2, 0.7, 0.2, 1] }',
+      '  }',
+      '};',
+      '',
+      '<motion.section',
+      '  variants={fadeUp}',
+      '  initial="hidden"',
+      '  whileInView="show"',
+      '  viewport={{ once: true,',
+      '    margin: "-8% 0px" }}',
+      '>…</motion.section>'
+    ].join('\n');
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!els.length) return;
+    els.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+      el.style.transition = 'opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1)';
+    });
+    const reveal = (el) => { if (el.dataset.revealed) return; el.style.opacity = '1'; el.style.transform = 'none'; el.dataset.revealed = '1'; };
+    const check = () => {
+      const h = window.innerHeight || document.documentElement.clientHeight;
+      els.forEach(el => {
+        if (el.dataset.revealed) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < h * 0.92 && r.bottom > 0) reveal(el);
+      });
+    };
+    check();
+    this._onScroll = check;
+    window.addEventListener('scroll', check, { passive: true });
+    document.addEventListener('scroll', check, true);
+    window.addEventListener('resize', check);
+    // safety net: never leave content hidden
+    this._revealTimer = setTimeout(() => els.forEach(reveal), 2600);
+  }
+  componentWillUnmount() {
+    clearTimeout(this._revealTimer);
+    if (this._onScroll) {
+      window.removeEventListener('scroll', this._onScroll);
+      document.removeEventListener('scroll', this._onScroll, true);
+      window.removeEventListener('resize', this._onScroll);
+    }
+  }
+}
+</script>
+</body>
+</html>
