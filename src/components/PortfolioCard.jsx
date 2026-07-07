@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import BeforeAfterSlider from './BeforeAfterSlider'
+import ImageLightbox from './ImageLightbox'
 
 const PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23DDDCEC"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%239A9AAA" font-size="14" font-family="sans-serif"%3Eنمونه کار%3C/text%3E%3C/svg%3E'
 
 export default function PortfolioCard({ item, index }) {
   const isAI = item.category === 'ai-photo'
+  const [lightboxOpen, setLightboxOpen] = useState(false)
 
   return (
     <motion.article
@@ -25,11 +28,15 @@ export default function PortfolioCard({ item, index }) {
           />
         </div>
       ) : (
-        <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+        <div
+          className="relative overflow-hidden cursor-pointer"
+          style={{ aspectRatio: '4/3' }}
+          onClick={() => setLightboxOpen(true)}
+        >
           <img
             src={item.image || PLACEHOLDER}
             alt={item.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER }}
           />
 
@@ -82,6 +89,14 @@ export default function PortfolioCard({ item, index }) {
         <h3 className="text-ink-900 font-bold mb-1" style={{ fontSize: 17 }}>{item.title}</h3>
         <p className="text-ink-500" style={{ fontSize: 13.5, lineHeight: 1.7 }}>{item.description}</p>
       </div>
+
+      {!isAI && lightboxOpen && (
+        <ImageLightbox
+          src={item.image || PLACEHOLDER}
+          alt={item.title}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </motion.article>
   )
 }

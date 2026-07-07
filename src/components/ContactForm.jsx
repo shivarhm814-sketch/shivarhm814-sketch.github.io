@@ -168,7 +168,6 @@ export default function ContactForm() {
                 value: '@Shivar65',
                 href: 'https://t.me/Shivar65',
               },
-              { icon: '📍', label: 'موقعیت', value: 'تهران، ایران' },
             ].map((item) => {
               const content = (
                 <>
