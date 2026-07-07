@@ -115,7 +115,7 @@ export default function Hero() {
             </div>
 
             {/* ستون چپ — عکس/ایلاستریشن (یا placeholder اگر فایل /public/images/hero.jpg وجود نداشته باشد) */}
-            <div className="hidden md:flex items-center justify-center relative w-full" style={{ aspectRatio: '4/3' }}>
+            <div className="flex items-center justify-center relative w-full mt-8 md:mt-0" style={{ aspectRatio: '4/3' }}>
               <div
                 className="absolute inset-0 flex items-center justify-center text-white/40 font-bold rounded-2xl"
                 style={{

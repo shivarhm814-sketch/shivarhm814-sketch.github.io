@@ -84,6 +84,14 @@ export default function Testimonials() {
             style={{ direction: 'rtl' }}
             animate={{ x: `${current * 100}%` }}
             transition={{ duration: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.15}
+            onDragEnd={(e, info) => {
+              const threshold = 40
+              if (info.offset.x < -threshold) goTo(current + 1)
+              else if (info.offset.x > threshold) goTo(current - 1)
+            }}
           >
             {testimonials.map((t) => (
               <div key={t.id} className="w-full flex-shrink-0 px-1">
