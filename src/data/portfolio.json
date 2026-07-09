@@ -18,21 +18,13 @@
     "tags": ["هوش مصنوعی", "محصول", "تجاری"]
   },
   {
-    "id": "project-3",
-    "title": "پرتره هنری با هوش مصنوعی",
+    "id": "project-10",
+    "title": "تصویرسازی محصول با هوش مصنوعی",
     "category": "ai-photo",
-    "description": "تبدیل عکس پرتره معمولی به اثر هنری با سبک نقاشی روغن",
-    "imageBefore": "/images/project-3-before.jpg",
-    "imageAfter": "/images/project-3-after.jpg",
-    "tags": ["هوش مصنوعی", "پرتره", "هنر دیجیتال"]
-  },
-  {
-    "id": "project-4",
-    "title": "وب‌سایت مشاور املاک",
-    "category": "web-design",
-    "description": "طراحی وب‌سایت اختصاصی مشاور املاک با جستجوی هوشمند و نمایش آگهی‌ها",
-    "image": "/images/project-4.jpg",
-    "tags": ["املاک", "UI/UX", "طراحی وب"]
+    "description": "تبدیل عکس ساده‌ی محصول به تصویری حرفه‌ای و آماده‌ی فروش با هوش مصنوعی",
+    "imageBefore": "/images/project-10-before.jpg",
+    "imageAfter": "/images/project-10-after.jpg",
+    "tags": ["هوش مصنوعی", "محصول", "تجاری"]
   },
   {
     "id": "project-5",
@@ -49,6 +41,23 @@
     "description": "طراحی اپلیکیشن موبایل برای پیشنهاد دستور پخت بر اساس مواد غذایی موجود در خانه، با تمرکز بر کاهش هزینه و دورریز",
     "image": "/images/project-2.jpg",
     "tags": ["موبایل", "اپ", "بهره‌وری"]
+  },
+  {
+    "id": "project-3",
+    "title": "پرتره هنری با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "تبدیل عکس پرتره معمولی به اثر هنری با سبک نقاشی روغن",
+    "imageBefore": "/images/project-3-before.jpg",
+    "imageAfter": "/images/project-3-after.jpg",
+    "tags": ["هوش مصنوعی", "پرتره", "هنر دیجیتال"]
+  },
+  {
+    "id": "project-4",
+    "title": "وب‌سایت مشاور املاک",
+    "category": "web-design",
+    "description": "طراحی وب‌سایت اختصاصی مشاور املاک با جستجوی هوشمند و نمایش آگهی‌ها",
+    "image": "/images/project-4.jpg",
+    "tags": ["املاک", "UI/UX", "طراحی وب"]
   },
   {
     "id": "project-7",

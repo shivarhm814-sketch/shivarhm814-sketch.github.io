@@ -13,10 +13,11 @@ export default function PortfolioCard({ item, index }) {
     <motion.article
       initial={{ opacity: 0, y: 26 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8, transition: { duration: 0.25, ease: [0.2, 0.7, 0.2, 1] } }}
       viewport={{ once: true, margin: '-8% 0px' }}
       transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1], delay: index * 0.08 }}
-      className="bg-white rounded-2xl overflow-hidden border shadow-card group"
-      style={{ borderColor: '#F0F0F5' }}
+      className="bg-white overflow-hidden group relative transition-shadow duration-300 hover:shadow-xl flex flex-col h-full"
+      style={{ borderRadius: '24px 24px 8px 24px', border: '1px solid #F1ECFF' }}
     >
       {isAI ? (
         <div className="p-3">
@@ -30,13 +31,13 @@ export default function PortfolioCard({ item, index }) {
       ) : (
         <div
           className="relative overflow-hidden cursor-pointer"
-          style={{ aspectRatio: '4/3' }}
+          style={{ aspectRatio: '4/5' }}
           onClick={() => setLightboxOpen(true)}
         >
           <img
             src={item.image || PLACEHOLDER}
             alt={item.title}
-            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
             onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER }}
           />
 
@@ -68,16 +69,22 @@ export default function PortfolioCard({ item, index }) {
             style={{ background: 'linear-gradient(135deg, rgba(158,116,228,.88) 0%, rgba(106,70,196,.88) 100%)' }}
           >
             <h3 className="text-white font-bold mb-2" style={{ fontSize: 16 }}>{item.title}</h3>
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap gap-1 mb-3">
               {item.tags.map((t) => (
                 <span key={t} className="text-white/80" style={{ fontSize: 11, background: 'rgba(255,255,255,.18)', padding: '3px 9px', borderRadius: 999 }}>{t}</span>
               ))}
             </div>
+            <span
+              className="inline-flex items-center gap-1 font-bold self-start"
+              style={{ color: '#fff', fontSize: 13 }}
+            >
+              مشاهده پروژه ←
+            </span>
           </div>
         </div>
       )}
 
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         {isAI && (
           <span
             className="inline-block font-semibold mb-3"
@@ -87,8 +94,14 @@ export default function PortfolioCard({ item, index }) {
           </span>
         )}
         <h3 className="text-ink-900 font-bold mb-1" style={{ fontSize: 17 }}>{item.title}</h3>
-        <p className="text-ink-500" style={{ fontSize: 13.5, lineHeight: 1.7 }}>{item.description}</p>
+        <p className="text-ink-500 mt-auto" style={{ fontSize: 13.5, lineHeight: 1.7 }}>{item.description}</p>
       </div>
+
+      {/* خط بنفش پایین کارت هنگام hover */}
+      <span
+        className="absolute bottom-0 right-0 w-0 group-hover:w-full transition-all duration-300"
+        style={{ height: 3, background: '#5B54E8' }}
+      />
 
       {!isAI && lightboxOpen && (
         <ImageLightbox

@@ -79,7 +79,7 @@ export default function BeforeAfterSlider({ before, after, altBefore = 'قبل',
         onMouseDown={() => { dragging.current = true }}
         onTouchStart={() => { dragging.current = true }}
       >
-        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-ink-700 text-xs font-bold">
+        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-xs font-bold" style={{ color: '#5B54E8' }}>
           ↔
         </div>
       </div>
