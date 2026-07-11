@@ -9,11 +9,38 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.2, 0.7, 0.2, 1] } },
 }
 
+const ICONS = {
+  all: (
+    <svg viewBox="0 0 24 24" width="9" height="9" fill="currentColor">
+      <circle cx="12" cy="12" r="12" />
+    </svg>
+  ),
+  'web-design': (
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z" />
+    </svg>
+  ),
+  'app-design': (
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="6.5" y="2.5" width="11" height="19" rx="2.5" />
+      <path d="M11 18.2h2" />
+    </svg>
+  ),
+  'ai-photo': (
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2.5" y="7" width="19" height="13" rx="2.5" />
+      <path d="M8 7l1.4-2.5h5.2L16 7" />
+      <circle cx="12" cy="13.5" r="3.3" />
+    </svg>
+  ),
+}
+
 const FILTERS = [
-  { key: 'all',        label: 'همه',         icon: '●' },
-  { key: 'web-design', label: 'طراحی سایت',   icon: '🌐' },
-  { key: 'app-design', label: 'اپلیکیشن',     icon: '📱' },
-  { key: 'ai-photo',   label: 'عکاسی',        icon: '📸' },
+  { key: 'all',        label: 'همه' },
+  { key: 'web-design', label: 'طراحی سایت' },
+  { key: 'app-design', label: 'اپلیکیشن' },
+  { key: 'ai-photo',   label: 'عکاسی' },
 ]
 
 const FEATURED_ID = 'project-5'
@@ -72,7 +99,7 @@ export default function Portfolio() {
                 if (active !== f.key) e.currentTarget.style.color = '#3A34A8'
               }}
             >
-              <span>{f.icon}</span>
+              <span className="flex items-center">{ICONS[f.key]}</span>
               <span>{f.label}</span>
             </button>
           ))}
