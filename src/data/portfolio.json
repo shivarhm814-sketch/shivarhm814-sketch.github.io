@@ -86,6 +86,15 @@
     "tags": ["هوش مصنوعی", "نمونه", "تبدیل عکس"]
   },
   {
+    "id": "project-12",
+    "title": "نمونه تبدیل عکس با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "تبدیل عکس پرتره‌ی معمولی به عکس حرفه‌ای با طراحی پس‌زمینه‌ی دلخواه",
+    "imageBefore": "/images/project-12-before.jpg",
+    "imageAfter": "/images/project-12-after.jpg",
+    "tags": ["هوش مصنوعی", "نمونه", "تبدیل عکس"]
+  },
+  {
     "id": "project-3",
     "title": "پرتره هنری با هوش مصنوعی",
     "category": "ai-photo",
