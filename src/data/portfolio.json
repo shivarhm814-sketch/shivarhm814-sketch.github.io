@@ -43,13 +43,12 @@
     "tags": ["موبایل", "اپ", "بهره‌وری"]
   },
   {
-    "id": "project-3",
-    "title": "پرتره هنری با هوش مصنوعی",
-    "category": "ai-photo",
-    "description": "تبدیل عکس پرتره معمولی به اثر هنری با سبک نقاشی روغن",
-    "imageBefore": "/images/project-3-before.jpg",
-    "imageAfter": "/images/project-3-after.jpg",
-    "tags": ["هوش مصنوعی", "پرتره", "هنر دیجیتال"]
+    "id": "project-11",
+    "title": "اپ موآرا",
+    "category": "app-design",
+    "description": "طراحی صفحه خوش‌آمدگویی اپلیکیشن موبایل مدل مو، برای پیشنهاد مدل موی جدید متناسب با چهره کاربر",
+    "image": "/images/project-11.jpg",
+    "tags": ["موبایل", "اپ", "زیبایی"]
   },
   {
     "id": "project-4",
@@ -85,5 +84,14 @@
     "imageBefore": "/images/project-9-before.jpg",
     "imageAfter": "/images/project-9-after.jpg",
     "tags": ["هوش مصنوعی", "نمونه", "تبدیل عکس"]
+  },
+  {
+    "id": "project-3",
+    "title": "پرتره هنری با هوش مصنوعی",
+    "category": "ai-photo",
+    "description": "تبدیل عکس پرتره معمولی به اثر هنری با سبک نقاشی روغن",
+    "imageBefore": "/images/project-3-before.jpg",
+    "imageAfter": "/images/project-3-after.jpg",
+    "tags": ["هوش مصنوعی", "پرتره", "هنر دیجیتال"]
   }
 ]
